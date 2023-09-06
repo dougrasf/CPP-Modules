@@ -10,7 +10,8 @@ class PhoneBook
     private:
         Contact contact[8];
     public:
-        void addContact(int index, std::string name, std::string num);
+        void addContact(int index);
+		void add(void);
         void getContact(int index);
 };
 

@@ -1,10 +1,10 @@
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-INCLUDE = -I ./includes
+INCLUDE = -I ./include
 
-SRCS =  ./srcs/Contact.cpp \
-		./srcs/PhoneBook.cpp \
-		./srcs/Main.cpp
+SRCS =  ./src/Contact.cpp \
+		./src/PhoneBook.cpp \
+		./src/Main.cpp
 
 NAME = PhoneBook
 
