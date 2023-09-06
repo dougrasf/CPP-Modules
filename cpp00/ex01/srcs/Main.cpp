@@ -1,9 +1,11 @@
-#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {
-    Contact contact;
-
-    contact.setname("Jorginho");
-    std::cout << contact.getname() << std::endl;
+    PhoneBook phonebook;
+    std::string command;
+    
+    phonebook.addContact(0, "Jorginho", "12345");
+    phonebook.getContact(0);
+    return(0);
 }

@@ -1,24 +1,28 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 
-#include <iostream>
+enum data
+{
+    firstname,
+    lastname,
+    nickname,
+    phonenumber,
+    darkestsecret,
+};
 
 class Contact
 {
     private:
-        int         num;
-        std::string name;
+        int index;
+        std::string infos[4];
     public:
-        int getnum(void);
-        void setnum(int num);
+        std::string getnum(void);
+        void setnum(std::string num);
         std::string getname(void);
         void setname(std::string name);
+        void setindex(int i);
+        int getindex(void);
+        void printinfos();
 };
-
-// class PhoneBook
-// {
-//     private:
-    
-// }
 
 #endif
