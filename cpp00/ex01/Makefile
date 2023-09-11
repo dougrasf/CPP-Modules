@@ -4,6 +4,7 @@ INCLUDE = -I ./include
 
 SRCS =  ./src/Contact.cpp \
 		./src/PhoneBook.cpp \
+		./src/PhoneBookUtils.cpp \
 		./src/Main.cpp
 
 NAME = PhoneBook

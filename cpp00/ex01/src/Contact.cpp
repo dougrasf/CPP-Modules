@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 11:03:01 by dofranci          #+#    #+#             */
+/*   Updated: 2023/09/11 16:07:18 by dofranci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 // Get
@@ -17,4 +29,17 @@ void Contact::setsecret(std::string secret){infos[darkestsecret] = secret;}
 void Contact::setindex(int i){index = i;}
 
 // Utils
-void Contact::printinfos(){for(int i = 0; i < 4; i++){std::cout << infos[i] << std::endl;}}
+void Contact::printinfos(void)
+{
+    std::cout << getindex() << "         |" << getfirstname() << "|" << getlastname() << "|" << getnickname() << "|" << std::endl;
+}
+
+void Contact::setinfos(std::string data[6], int index)
+{
+    setfirstname(data[firstname]);
+    setlastname(data[lastname]);
+    setnickname(data[nickname]);
+    setnum(data[phonenumber]);
+    setsecret(data[darkestsecret]);
+    setindex(index);
+}

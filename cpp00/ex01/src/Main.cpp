@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/11 11:03:13 by dofranci          #+#    #+#             */
+/*   Updated: 2023/09/11 16:06:44 by dofranci         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 int main(void)
@@ -6,13 +18,14 @@ int main(void)
 	std::string command;
    
 	std::cout << "Welcome to your Phonebook!!\nPlease enter with a command:";
-	std::getline (std::cin,command); 
+	std::getline (std::cin,command);
+
 	while(true)
 	{
 		if(command == "ADD")
 	       		phonebook.add();
 		else if(command == "SEARCH")
-			phonebook.getContact(0); 
+			phonebook.search(); 
 		else if(command == "EXIT")
 			return(0);
 		else
@@ -25,6 +38,3 @@ int main(void)
 	}
 	return(0);
 }
- /* 		phonebook.addContact(0, "Jorginho", "12345");
-		phonebook.getContact(0); */
-		//	std::cout << "command: SEARCH\n";
