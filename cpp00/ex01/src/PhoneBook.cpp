@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:21 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 15:55:32 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:43:05 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void PhoneBook::getInfos(void)
 		std::cout << "Last name:";
 		std::getline(std::cin, data[lastname]);
 		data[lastname] = treatString(data[lastname]);
-
 	}
 
 	while (data[nickname].empty())

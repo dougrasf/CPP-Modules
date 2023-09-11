@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:02:42 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 16:07:13 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:44:36 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class Contact
 	int index;
 	std::string infos[5];
     public:
+        Contact(void);
 
         std::string getfirstname(void);
         void setfirstname(std::string fname);

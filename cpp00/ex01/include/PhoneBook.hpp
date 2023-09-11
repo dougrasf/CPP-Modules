@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:02:51 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 15:52:39 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:43:09 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class PhoneBook
 {
     private:
         Contact contact[8];
-        std::string data[6];
+        std::string data[5];
     public:
 		void add(void);
         void search(void);

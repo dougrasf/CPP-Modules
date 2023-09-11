@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:13 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 16:06:44 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:17:16 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(void)
 		else
 			std::cout << "\nInvalid command!! Try again\n" <<
 			       	"ADD: save a new contact\n" << 
-				"SEARCH: display a specific contact\n" <<
+					"SEARCH: display a specific contact\n" <<
 			        "EXIT: close PhoneBook\n\n";
 		std::cout << "Please enter with a command:";
 		std::getline (std::cin,command); 

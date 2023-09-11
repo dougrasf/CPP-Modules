@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:01 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 16:07:18 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:46:18 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ void Contact::setsecret(std::string secret){infos[darkestsecret] = secret;}
 void Contact::setindex(int i){index = i;}
 
 // Utils
+Contact::Contact() 
+{
+    for (int i = 0; i < 5; i++) {
+        infos[i] = "          ";
+    }
+    setindex(0);
+}
+
 void Contact::printinfos(void)
 {
     std::cout << getindex() << "         |" << getfirstname() << "|" << getlastname() << "|" << getnickname() << "|" << std::endl;
