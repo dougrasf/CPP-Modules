@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:02:42 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/18 12:19:32 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:20:44 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ class Contact
 	    void printinfos(void);
 	    void printphonebook(void);
         std::string treatString(const std::string inputString);
-
 };
 
 #endif

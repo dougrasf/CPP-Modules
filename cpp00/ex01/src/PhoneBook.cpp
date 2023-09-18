@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:21 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/18 12:57:43 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:26:57 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void PhoneBook::getInfos(void)
 	{
 	   std::cout << "First name:";
 	   std::getline(std::cin, data[firstname]);
-	   if(data[firstname].length() > 25)
+	   if(data[firstname].length() > 50)
 		{
 			data[firstname] = "";
-			std::cout << "Max length 25 of character" << std::endl;
+			std::cout << "Max length 50 of character" << std::endl;
 		}
 	}
 
@@ -29,10 +29,10 @@ void PhoneBook::getInfos(void)
 	{
 		std::cout << "Last name:";
 		std::getline(std::cin, data[lastname]);
-		if(data[lastname].length() > 25)
+		if(data[lastname].length() > 50)
 		{
 			data[lastname] = "";
-			std::cout << "Max length 25 of character" << std::endl;
+			std::cout << "Max length 50 of character" << std::endl;
 		}
 	}
 
@@ -40,10 +40,10 @@ void PhoneBook::getInfos(void)
 	{
 		std::cout << "Nick name:";
 		std::getline(std::cin, data[nickname]);
-		if(data[nickname].length() > 25)
+		if(data[nickname].length() > 50)
 		{
 			data[nickname] = "";
-			std::cout << "Max length 25 of character" << std::endl;
+			std::cout << "Max length 50 of character" << std::endl;
 		}
 	}
 
@@ -51,10 +51,10 @@ void PhoneBook::getInfos(void)
 	{
 		std::cout << "Phone number:";
 		std::getline(std::cin, data[phonenumber]);
-		if(isNumeric(data[phonenumber]) != 0 || data[phonenumber].length() > 25)
+		if(isNumeric(data[phonenumber]) != 0 || data[phonenumber].length() > 50)
 		{	
 			data[phonenumber] = "";	
-			std::cout << "Only numbers are allowed in this field and max length 25 of character" << std::endl;
+			std::cout << "Only numbers are allowed in this field and max length 50 of character" << std::endl;
 		}
 	}
 
@@ -62,10 +62,10 @@ void PhoneBook::getInfos(void)
 	{
 		std::cout << "Darkest Secret:";
 		std::getline(std::cin, data[darkestsecret]);
-		if(data[darkestsecret].length() > 25)
+		if(data[darkestsecret].length() > 50)
 		{
 			data[darkestsecret] = "";
-			std::cout << "Max length 25 of character" << std::endl;
+			std::cout << "Max length 50 of character" << std::endl;
 		}
 	}
 }

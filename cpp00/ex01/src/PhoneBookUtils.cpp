@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:21 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/18 12:57:52 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:21:42 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,7 @@ int PhoneBook::stringToInt(const std::string str)
         i = 1;
     }
     else if (str[0] == '+')
-    {
         i = 1;
-    }
 
     for (; i < str.length(); ++i)
     {
