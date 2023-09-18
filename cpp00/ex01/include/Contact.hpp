@@ -6,12 +6,14 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:02:42 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 16:44:36 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:19:32 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_H
 #define CONTACT_H
+
+#include "PhoneBook.hpp"
 
 enum data
 {
@@ -50,6 +52,9 @@ class Contact
 
         void setinfos(std::string data[6], int index);
 	    void printinfos(void);
+	    void printphonebook(void);
+        std::string treatString(const std::string inputString);
+
 };
 
 #endif

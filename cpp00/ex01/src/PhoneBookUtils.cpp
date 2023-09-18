@@ -6,11 +6,34 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:21 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 15:52:49 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:57:52 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
+
+void PhoneBook::clearInfos(void)
+{
+	data[firstname] = "";
+	data[lastname] = "";
+	data[nickname] = "";
+	data[phonenumber] = "";
+	data[darkestsecret] = "";
+}
+
+void PhoneBook::addNewContact()
+{
+	static int index;
+
+	for(int i = 0; i < 8; i++)
+	{
+		if(contact[i].getindex() == index)
+			contact[i].setinfos(data, 8);
+	}
+	index++;
+	if(index >= 8)
+		index = 0;
+}
 
 int PhoneBook::stringToInt(const std::string str)
 {
@@ -56,19 +79,4 @@ int PhoneBook::isNumeric(std::string data)
       return (0);
     else 
       return (1);
-}
-
-std::string PhoneBook::treatString(const std::string inputString)
-{
-    std::string result;
-
-    if (inputString.length() > 9) {
-        result = inputString.substr(0, 9) + ".";
-    } else {
-        result = inputString;
-        while (result.length() < 10) {
-            result += " ";
-        }
-    }
-    return result;
 }

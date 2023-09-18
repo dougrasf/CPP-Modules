@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:02:51 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 16:43:09 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/18 12:19:25 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ class PhoneBook
  
         int stringToInt(const std::string str);
         int isNumeric(std::string data);
-        std::string treatString(const std::string inputString);
-
 };
 
 #endif
