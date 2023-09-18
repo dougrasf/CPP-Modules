@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:13 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/11 16:17:16 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:16:08 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,16 @@ int main(void)
 {
 	PhoneBook phonebook;
 	std::string command;
-   
-	std::cout << "Welcome to your Phonebook!!\nPlease enter with a command:";
+
+	std::cout << 
+		"\n---------------------------\n" << 
+		"Welcome to your Phonebook!!\n" <<
+	 	"---------------------------\n\n" << 
+		"Commands: ADD, SEARCH and EXIT\n\n" <<
+		"ADD: save a new contact\n" <<
+		"SEARCH: display a specific contact\n" <<
+		"EXIT: the program quits and the contacts are lost forever!\n" <<
+		"\nEnter with a command:";
 	std::getline (std::cin,command);
 
 	while(true)
@@ -27,7 +35,13 @@ int main(void)
 		else if(command == "SEARCH")
 			phonebook.search(); 
 		else if(command == "EXIT")
+		{
+			std::cout <<
+			"\n---------\n" << 
+			"Bye bye!!\n" <<
+	 		"---------\n\n";
 			return(0);
+		}
 		else
 			std::cout << "\nInvalid command!! Try again\n" <<
 			       	"ADD: save a new contact\n" << 
