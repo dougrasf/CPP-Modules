@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Main.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 11:03:13 by dofranci          #+#    #+#             */
-/*   Updated: 2023/09/18 13:16:08 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/09/21 19:49:53 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int main(void)
 			return(0);
 		}
 		else
-			std::cout << "\nInvalid command!! Try again\n" <<
+			std::cout << 
+					"\nInvalid command!! Try again\n" <<
 			       	"ADD: save a new contact\n" << 
 					"SEARCH: display a specific contact\n" <<
 			        "EXIT: close PhoneBook\n\n";

@@ -1,22 +1,21 @@
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = megaphone
+INCLUDE = -I .
 
-SRC = Megaphone.cpp
+SRCS =  main.cpp \
+		NewFile.cpp \
 
-OBJECT = $(SRC:.cpp=.o)
+NAME = replace
+
+OBJECT = $(SRCS:.cpp=.o)
 
 COMPILER = c++
 
 all: $(NAME)
 
-%.o: %.cpp
-	@echo "Compiling..."
-	@$(COMPILER) $(FLAGS) -c $< -o $@
-
-
 $(NAME): $(OBJECT)
-	@$(COMPILER) $(FLAGS) $(OBJECT) -o $(NAME)
+	@echo "Compiling..."
+	$(COMPILER) $(FLAGS) $(INCLUDE) $(SRCS) -o $(NAME)
 	@echo "Executable ./$(NAME)"
 
 clean:
