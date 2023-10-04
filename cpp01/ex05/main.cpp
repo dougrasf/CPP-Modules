@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 15:15:06 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/03 19:08:25 by dofranci         ###   ########.fr       */
+/*   Created: 2023/10/03 19:11:55 by dofranci          #+#    #+#             */
+/*   Updated: 2023/10/03 22:20:39 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "NewFile.hpp"
+#include "Harl.hpp"
 
 int cerror(std::string error)
 {
@@ -20,29 +20,24 @@ int cerror(std::string error)
 
 int valid_args(int argc, char *argv[])
 {
-    std::ifstream file;
+    if(argc != 2)
+        return(cerror("Invalid arguments!"));
     
-    if(argc != 4)
-        return(cerror("Invalid number of arguments!"));
-    
-    file.open(argv[1]);
-    if(!file.is_open())
-        return(cerror("Invalid input file!"));
-    file.close();
-
-    std::string s1 = argv[2];
-    if(s1.empty())
-        return(cerror("Invalid S1!"));
-
+    std::string level = argv[1];
+    if(level.compare("DEBUG") != 0 && \
+       level.compare("INFO") != 0 && \
+       level.compare("WARNING") != 0 && \
+       level.compare("ERROR") != 0)
+        return(cerror("Invalid level!\n\nTry: DEBUG, INFO, WARNING or ERROR"));
     return(0);
 }
 
 int main(int argc, char *argv[])
 {
-    if(valid_args(argc, argv) == 1)
+    if(valid_args(argc, argv) != 0)
         return(1);
-    
-    NewFile newfile(argv);
-    newfile.getContent();
+
+    Harl harl;
+    harl.complain(argv[1]);
     return(0);
 }
