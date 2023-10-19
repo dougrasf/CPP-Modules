@@ -16,26 +16,36 @@ int main(void)
 {
 	Fixed a(10);
 	Fixed b(2);
+	Fixed c(2);
+	Fixed const d( Fixed( 5.05f ) * Fixed( 2 ) );
 
+	
+	// Comparison
+	std::cout << "\n-- COMPARISON OPERATORS TESTS --\n" << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << "c = " << c << std::endl;
 
-
-	std::cout << "a:" << a << std::endl;
-	std::cout << "b:" << b << std::endl;
-	if(a < b)
-		std::cout << "a menor que b" << std::endl;
+	if(b < a)
+		std::cout << "\nb < a" << std::endl;
 	if(a > b)
-		std::cout << "a maior que b" << std::endl;
+		std::cout << "a > b" << std::endl;
 	if(a >= b)
-		std::cout << "a maior igual a b" << std::endl;
-	if(a <= b)
-		std::cout << "a menor igual a b" << std::endl;
-	if(a == b)
-		std::cout << "a igual a b" << std::endl;
+		std::cout << "a >= b" << std::endl;
+	if(b <= c)
+		std::cout << "b <= c" << std::endl;
+	if(b == c)
+		std::cout << "b == c" << std::endl;
 	if(a != b)
-		std::cout << "a diferente de b" << std::endl;
+		std::cout << "a != b" << std::endl;
+
+	// Arithmetics
+	std::cout << "\n-- ARITHMETICS OPERATORS TESTS --\n" << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
 
 	Fixed temp(a + b);
-	std::cout << "a + b = " << temp << std::endl;
+	std::cout << "\na + b = " << temp << std::endl;
 
 	temp = a - b;
 	std::cout << "a - b = " << temp << std::endl;
@@ -46,17 +56,37 @@ int main(void)
 	temp = a / b;
 	std::cout << "a / b = " << temp << std::endl;
 
-	a++;
-	std::cout << "a++ = " << a << std::endl;	
+	// Increment/decrement
+	std::cout << "\n-- INCREMENT/DECREMENT OPERATORS TESTS --\n" << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "a++ = " << a++ << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << std::endl; 
+	
+	std::cout << "b = " << b << std::endl;
+	std::cout << "b-- = " << b-- << std::endl;	
+	std::cout << "b = " << b << std::endl;
+	std::cout << std::endl; 
 
-	b--;
-	std::cout << "b-- = " << b << std::endl;	
+	std::cout << "a = " << a << std::endl;
+	std::cout << "++a = " << ++a << std::endl;	
+	std::cout << "a = " << a << std::endl;
+	std::cout << std::endl; 
 
-	++a;
-	std::cout << "++a = " << a << std::endl;	
+	std::cout << "b = " << b << std::endl;
+	std::cout << "--b = " << --b << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << std::endl; 
 
-	--b;
-	std::cout << "--b = " << b << std::endl;	
+	//  Min and Max member functions
+	std::cout << "\n-- MIN/MAX MEMBER FUNCTIONS TESTS --\n" << std::endl;
+	std::cout << "a = " << a << std::endl;
+	std::cout << "b = " << b << std::endl;
+	std::cout << "d = " << d << std::endl;
+
+	std::cout << "\nMax (a, b) = " << Fixed::max(a, b) << std::endl;
+	std::cout << "Min (a, b) = " << Fixed::min(a, b) << std::endl;
+
 	return(0);
 }
 

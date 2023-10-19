@@ -14,7 +14,6 @@
 #define FIXED_H
 
 #include <iostream>
-#include <string>
 #include <cmath>
 
 class Fixed
@@ -55,8 +54,13 @@ class Fixed
       Fixed operator++(void);
       Fixed operator--(void);
 
+	  static Fixed &min(Fixed &a, Fixed &b);
+	  static Fixed &max(Fixed &a, Fixed &b);
+	  
+	  static Fixed const &min(const Fixed &a, const Fixed &b);
+	  static Fixed const &max(const Fixed &a, const Fixed &b);
 };
 
-std::ostream&	operator<<(std::ostream& old, const Fixed& obj);
+std::ostream &operator<<(std::ostream& old, const Fixed& obj);
 
 #endif
