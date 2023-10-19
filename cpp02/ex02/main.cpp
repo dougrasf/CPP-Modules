@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:15:06 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/16 18:49:30 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/10/18 22:33:34 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int main(void)
 {
 	Fixed a(10);
 	Fixed b(2);
+
+
 
 	std::cout << "a:" << a << std::endl;
 	std::cout << "b:" << b << std::endl;
@@ -50,6 +52,11 @@ int main(void)
 	b--;
 	std::cout << "b-- = " << b << std::endl;	
 
+	++a;
+	std::cout << "++a = " << a << std::endl;	
+
+	--b;
+	std::cout << "--b = " << b << std::endl;	
 	return(0);
 }
 

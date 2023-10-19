@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:15:21 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/16 17:08:54 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/10/18 22:18:52 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ class Fixed
 
 	  Fixed operator++(int);
 	  Fixed operator--(int);
+      Fixed operator++(void);
+      Fixed operator--(void);
+
 };
 
 std::ostream&	operator<<(std::ostream& old, const Fixed& obj);

@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 15:16:39 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/16 20:01:08 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/10/18 22:36:58 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,11 +130,29 @@ Fixed Fixed::operator/(const Fixed &old)
 
 Fixed Fixed::operator++(int)
 {
+	Fixed temp;
+	
+	temp._fixed = this->_fixed;
+	this->_fixed += 1;
+	return(temp);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp;
+	
+	temp._fixed = this->_fixed;
+	this->_fixed -= 1;
+	return(*this);
+}
+
+Fixed Fixed::operator++(void)
+{
 	this->_fixed++;
 	return(*this);
 }
 
-Fixed Fixed::operator--(int)
+Fixed Fixed::operator--(void)
 {
 	this->_fixed--;
 	return(*this);
