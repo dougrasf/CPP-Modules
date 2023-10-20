@@ -7,4 +7,4 @@ CPP-01: This module is designed to help you understand the memory allocation, re
 
 CPP-02: This module is designed to help you understand Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.
 
-CPP-02: This module is designed to help you understand Inheritance in CPP.
+CPP-03: This module is designed to help you understand Inheritance in CPP.
