@@ -33,7 +33,7 @@ bool ClapTrap::hasEnergy(void)
 {
 	if(energyPoints > 0)
 		return(true);
-	std::cout << _name << ": Does not have sufficient energy points" << std::endl;
+	std::cout << _name << ": Insufficient energy points." << std::endl;
 	return(false);
 }
 
@@ -41,17 +41,18 @@ bool ClapTrap::isAlive(void)
 {
 	if(hitPoints > 0)
 		return(true);
-	std::cout << _name << ": A corpse can not attack" << std::endl;
+	std::cout << _name << ": Is dead." << std::endl;
 	return(false);
 }
 
 void ClapTrap::setAttack(const unsigned int amount)
-{ 
+{
+	if(!isAlive())
+		return; 
 	attackDamage = amount; 
 	std::cout << _name << " receive " 
-		  << amount << " points of Attack Damage"
+		  << amount << " points of Attack Damage."
 		  << std::endl;
-
 }
 
 unsigned int ClapTrap::getAttack(void){ return(attackDamage); }
@@ -72,8 +73,8 @@ void ClapTrap::attack(const std::string &target)
 	if(!isAlive())
 		return;
 	std::cout << "ClapTrap " << _name << " attacks " << target 
-		  << ", causing " << attackDamage << " points of damage!"
-		  << std::endl;
+			  << ", causing " << attackDamage << " points of damage!"
+			  << std::endl;
 	energyPoints -= 1;
 }
 
@@ -81,7 +82,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 { 
 	if(hitPoints <= 0)
 	{
-		std::cout << "A corpse can not receive any attack damage";
+		std::cout << "A corpse can not receive any attack damage.";
 		return;
 	}
 	hitPoints -= amount; 

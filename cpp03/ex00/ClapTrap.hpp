@@ -22,10 +22,10 @@ class ClapTrap
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-		void		setAttack(const unsigned int amount);
+		void			setAttack(const unsigned int amount);
 		unsigned int	getAttack(void);
-		bool		isAlive(void);
-		bool		hasEnergy(void);
+		bool			isAlive(void);
+		bool			hasEnergy(void);
 		
 };
 

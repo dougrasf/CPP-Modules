@@ -12,12 +12,24 @@ int main(void)
 	
 	jorginho.attack("Zezinho");
 	zezinho.takeDamage(jorginho.getAttack());
-	zezinho.stats();
-
-	jorginho.setAttack(5);
+	std::cout << std::endl;
+	jorginho.stats();
+	zezinho.stats();	
+	
+	jorginho.setAttack(10);
 	jorginho.attack("Zezinho");
 	zezinho.takeDamage(jorginho.getAttack());
-	zezinho.stats();
+	std::cout << std::endl;
+	jorginho.stats();
+	zezinho.stats();	
 
+	jorginho.attack("Zezinho");
+	zezinho.takeDamage(jorginho.getAttack());
+	std::cout << std::endl;
+	jorginho.stats();
+	zezinho.stats();	
+	
+	zezinho.attack("Jorginho");
+	
 	return(0);
 }

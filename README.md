@@ -6,3 +6,5 @@ CPP-00: This first module of C++ is designed to help you understand the specifit
 CPP-01: This module is designed to help you understand the memory allocation, reference, pointers to members.
 
 CPP-02: This module is designed to help you understand Ad-hoc polymorphism, overloads and orthodox canonical classes in CPP.
+
+CPP-02: This module is designed to help you understand Inheritance in CPP.
