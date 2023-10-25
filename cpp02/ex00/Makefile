@@ -14,9 +14,10 @@ COMPILER = c++
 all: $(NAME)
 
 $(NAME): $(OBJECT)
-	@echo "Compiling..."
-	$(COMPILER) $(FLAGS) $(INCLUDE) $(SRCS) -o $(NAME)
 	@echo "Executable ./$(NAME)"
+
+%.o: %.cpp
+	$(COMPILER) $(FLAGS) $(INCLUDE) $(SRCS) -o $(NAME)
 
 clean:
 	@/bin/rm -f $(OBJECT)
