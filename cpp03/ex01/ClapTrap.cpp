@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 19:06:35 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/25 22:26:10 by dofranci         ###   ########.fr       */
+/*   Created: 2023/10/25 19:06:14 by dofranci          #+#    #+#             */
+/*   Updated: 2023/10/25 22:26:31 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 ClapTrap::ClapTrap(const std::string name) : _name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Default constructor called!" << std::endl;
+	std::cout << "ClapTrap constructor called!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &old)
 {
-	std::cout << "Copy constructor called!" << std::endl;
+	std::cout << "ClapTrap copy constructor called!" << std::endl;
 	*this = old;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Default destructor called!" << std::endl;
+	std::cout << "ClapTrap destructor called!" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &old)
 {
-	std::cout << "Copy assignment operator called!" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called!" << std::endl;
 	if (this != &old)
 	{
 		this->_name = old._name;
@@ -99,7 +99,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	hitPoints -= amount;
 	if(hitPoints < 0)
-		hitPoints = 0;
+		hitPoints = 0; 
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -110,5 +110,4 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return;
 	hitPoints += amount; 
 	energyPoints -= 1;
-	std::cout << _name << " was repaired with " << amount << " hitpoints" << std::endl;
 }

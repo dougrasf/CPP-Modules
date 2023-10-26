@@ -5,46 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 19:06:44 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/25 22:13:23 by dofranci         ###   ########.fr       */
+/*   Created: 2023/10/25 19:06:25 by dofranci          #+#    #+#             */
+/*   Updated: 2023/10/25 22:08:28 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap jorginho("Jorginho");
 	ClapTrap zezinho("Zezinho");
+	ScavTrap luizinho("Luizinho");
 
-	
 	std::cout << std::endl;
-	jorginho.stats();
+	zezinho.stats();
+	luizinho.stats();
+	
+	luizinho.attack("Zezinho");
+	zezinho.takeDamage(luizinho.getAttack());
+	std::cout << std::endl;
+	luizinho.stats();
 	zezinho.stats();	
 	
-	jorginho.attack("Zezinho");
-	zezinho.takeDamage(jorginho.getAttack());
+	luizinho.attack("Zezinho");
+	zezinho.takeDamage(luizinho.getAttack());
 	std::cout << std::endl;
-	jorginho.stats();
+	luizinho.stats();
 	zezinho.stats();	
 	
-	jorginho.setAttack(10);
-	jorginho.attack("Zezinho");
-	zezinho.takeDamage(jorginho.getAttack());
-	std::cout << std::endl;
-	jorginho.stats();
-	zezinho.stats();	
-
-	jorginho.attack("Zezinho");
-	zezinho.takeDamage(jorginho.getAttack());
-	std::cout << std::endl;
-	jorginho.stats();
-	zezinho.stats();	
-	
-	zezinho.attack("Jorginho");
-	jorginho.beRepaired(20);
-	jorginho.stats();
-	
+	luizinho.guardGate();
 	std::cout << std::endl;
 	return(0);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 19:06:39 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/25 22:24:30 by dofranci         ###   ########.fr       */
+/*   Created: 2023/10/25 19:06:19 by dofranci          #+#    #+#             */
+/*   Updated: 2023/10/25 22:06:04 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string		_name;
 		int	hitPoints;
 		unsigned int	energyPoints;
