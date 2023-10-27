@@ -27,8 +27,8 @@ int main(void)
 	FragTrap luizinho("Luizinho Frag");
 
 	std::cout << std::endl;
-	jorginho.stats();
 	zezinho.stats();
+	jorginho.stats();
 	luizinho.stats();
 
 	zezinho.beRepaired(90);
@@ -36,14 +36,14 @@ int main(void)
 	zezinho.takeDamage(jorginho.getAttack());
 
 	std::cout << std::endl;
-	jorginho.stats();
 	zezinho.stats();	
+	jorginho.stats();
 
 	spendEnergy(jorginho);
 
 	std::cout << std::endl;
-	jorginho.stats();
 	zezinho.stats();
+	jorginho.stats();
 
 	jorginho.attack("Zezinho Clap");
 	zezinho.setAttack(148);
@@ -51,8 +51,8 @@ int main(void)
 	jorginho.takeDamage(zezinho.getAttack());
 
 	std::cout << std::endl;
-	jorginho.stats();
 	zezinho.stats();
+	jorginho.stats();
 
 	jorginho.guardGate();
 	std::cout << std::endl;
@@ -70,8 +70,8 @@ int main(void)
 	zezinho.takeDamage(luizinho.getAttack());
 
 	std::cout << std::endl;
-	jorginho.stats();
 	zezinho.stats();
+	jorginho.stats();
 	luizinho.stats();
 
 	jorginho.attack("Luizinho Frag");

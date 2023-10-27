@@ -23,6 +23,7 @@ class ClapTrap
 		unsigned int	attackDamage;
 
 	public:
+		ClapTrap(void);
 		ClapTrap(const std::string name);
 		ClapTrap(const ClapTrap &old);
 		~ClapTrap(void);

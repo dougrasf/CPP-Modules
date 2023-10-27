@@ -12,6 +12,14 @@
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void) : ClapTrap("Default")
+{
+	std::cout << "FragTrap default constructor called!" << std::endl;
+    hitPoints = 100;
+    energyPoints = 100;
+    attackDamage = 30;
+}
+
 FragTrap::FragTrap(const std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap constructor called!" << std::endl;

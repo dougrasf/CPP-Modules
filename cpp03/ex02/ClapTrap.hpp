@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:06:39 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/26 21:58:17 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:56:03 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap
 		unsigned int	attackDamage;
 
 	public:
+		ClapTrap(void);
 		ClapTrap(const std::string name);
 		ClapTrap(const ClapTrap &old);
 		~ClapTrap(void);
