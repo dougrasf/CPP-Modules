@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 19:06:14 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/25 22:26:31 by dofranci         ###   ########.fr       */
+/*   Created: 2023/10/25 19:06:35 by dofranci          #+#    #+#             */
+/*   Updated: 2023/10/26 21:24:34 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(const std::string name) : _name(name), hitPoints(10), energyP
 
 ClapTrap::ClapTrap(const ClapTrap &old)
 {
-	std::cout << "ClapTrap copy constructor called!" << std::endl;
+	std::cout << "ClapTrap constructor called!" << std::endl;
 	*this = old;
 }
 
@@ -68,6 +68,7 @@ void ClapTrap::setAttack(const unsigned int amount)
 }
 
 unsigned int ClapTrap::getAttack(void){ return(attackDamage); }
+unsigned int ClapTrap::getEnergy(void){ return(energyPoints); }
 
 void ClapTrap::stats(void)
 {
@@ -80,9 +81,9 @@ void ClapTrap::stats(void)
 
 void ClapTrap::attack(const std::string &target)
 {
-	if(!hasEnergy())
-		return;
 	if(!isAlive())
+		return;
+	if(!hasEnergy())
 		return;
 	std::cout << "ClapTrap " << _name << " attacks " << target 
 			  << ", causing " << attackDamage << " points of damage!"
@@ -94,12 +95,12 @@ void ClapTrap::takeDamage(unsigned int amount)
 { 
 	if(hitPoints <= 0)
 	{
-		std::cout << "A corpse can not receive any attack damage.";
+		std::cout << "A corpse can not receive any attack damage." << std::endl;
 		return;
 	}
 	hitPoints -= amount;
 	if(hitPoints < 0)
-		hitPoints = 0; 
+		hitPoints = 0;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -110,4 +111,5 @@ void ClapTrap::beRepaired(unsigned int amount)
 		return;
 	hitPoints += amount; 
 	energyPoints -= 1;
+	std::cout << _name << " was repaired with " << amount << " hitpoints" << std::endl;
 }

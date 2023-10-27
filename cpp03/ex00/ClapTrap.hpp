@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 19:06:39 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/25 22:24:30 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/10/26 20:38:41 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class ClapTrap
 
 		void			setAttack(const unsigned int amount);
 		unsigned int	getAttack(void);
+		unsigned int	getEnergy(void);
 		bool			isAlive(void);
 		bool			hasEnergy(void);
 		
