@@ -9,20 +9,21 @@ SRCS =  main.cpp \
 
 NAME = FragTrap
 
-OBJECT = $(SRCS:.cpp=.o)
+OBJECTS = $(SRCS:.cpp=.o)
 
 COMPILER = c++
 
 all: $(NAME)
 
-$(NAME): $(OBJECT)
+$(NAME): $(OBJECTS)
+	$(COMPILER) $(FLAGS) $(INCLUDE) $(OBJECTS) -o $(NAME)
 	@echo "Executable ./$(NAME)"
 
 %.o: %.cpp
-	$(COMPILER) $(FLAGS) $(INCLUDE) $(SRCS) -o $(NAME)
+	$(COMPILER) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
-	@/bin/rm -f $(OBJECT)
+	@/bin/rm -f $(OBJECTS)
 	@echo "Removed O-FILES"
 
 fclean: clean 

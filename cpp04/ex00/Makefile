@@ -3,9 +3,11 @@ FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 INCLUDE = -I .
 
 SRCS =  main.cpp \
-		ClapTrap.cpp \
+		Animal.cpp \
+		Dog.cpp \
+		Cat.cpp \
 
-NAME = ClapTrap
+NAME = Animal
 
 OBJECTS = $(SRCS:.cpp=.o)
 
