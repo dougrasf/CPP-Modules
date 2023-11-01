@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:44:07 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/30 21:23:18 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/10/31 23:15:03 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ class Animal
 		virtual ~Animal(void);
 		Animal &operator=(const Animal &old);
         
-        virtual void    makeSound(void) const;
+        virtual void    makeSound(void) const = 0; // pure virtual function = abstract class
         std::string     getType(void) const;
 }; 

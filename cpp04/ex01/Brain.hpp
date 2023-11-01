@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 18:44:07 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/30 21:23:18 by dofranci         ###   ########.fr       */
+/*   Created: 2023/10/30 22:25:51 by dofranci          #+#    #+#             */
+/*   Updated: 2023/10/30 22:33:28 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 #include <iostream>
 
-class Animal
+class Brain
 {
-    protected:
-        std::string _type;
-    public:
-        Animal(void);
-        Animal(const std::string type);
-		Animal(const Animal &old);
-		virtual ~Animal(void);
-		Animal &operator=(const Animal &old);
+  protected:
+        std::string	_ideas[100];
+  public:
+        Brain(void);
+        Brain(const Brain &old);
+        virtual ~Brain(void);
+        Brain &operator=(const Brain &old);
         
-        virtual void    makeSound(void) const;
-        std::string     getType(void) const;
-}; 
+        std::string *getBrain(void);
+};

@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 18:46:36 by dofranci          #+#    #+#             */
-/*   Updated: 2023/10/27 19:37:17 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/10/30 21:30:10 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ class Cat : public Animal
 		~Cat(void);
 		Cat &operator=(const Cat &old);
 
-        void makeSound(void) const;
+        void        makeSound(void) const;
         std::string getType(void) const;
 };
