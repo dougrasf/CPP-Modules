@@ -6,13 +6,16 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:50:58 by dofranci          #+#    #+#             */
-/*   Updated: 2023/11/08 14:14:06 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:18:10 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat 
 {
@@ -37,12 +40,15 @@ class Bureaucrat
         Bureaucrat(const Bureaucrat &old);
         ~Bureaucrat(void);
         Bureaucrat &operator=(const Bureaucrat &old);
-        
+
         std::string getName(void) const;
         int getGrade(void) const;
 
         void incrementGrade(void);
         void decrementGrade(void);
+        
+        void signForm(Form &obj); 
+        void executeForm(Form &obj); 
 
 };
 

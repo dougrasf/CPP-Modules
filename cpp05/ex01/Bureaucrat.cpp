@@ -6,11 +6,21 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:50:50 by dofranci          #+#    #+#             */
-/*   Updated: 2023/11/08 15:33:02 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/11/10 12:19:29 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+//THROWS
+const char *Bureaucrat::GradeTooHighException::what() const throw() 
+{ 
+    return "Grade is too high!"; 
+}
+const char *Bureaucrat::GradeTooLowException::what() const throw() 
+{ 
+    return "Grade is too low!"; 
+}
 
 // CONSTRUCTORS AND DESTRUCTOR 
 Bureaucrat::Bureaucrat(const std::string name, const int grade) : _name(name), _grade(grade)
@@ -21,13 +31,21 @@ Bureaucrat::Bureaucrat(const std::string name, const int grade) : _name(name), _
     if(_grade > 150)
         throw Bureaucrat::GradeTooLowException();
 }
-Bureaucrat::Bureaucrat(void) : _name("Default"), _grade(1) { std::cout << "Bureaucrat Default constructor called" << std::endl; }
-Bureaucrat::Bureaucrat(const Bureaucrat &old) : _name(old._name), _grade(old._grade) { std::cout << "Bureaucrat Copy constructor called" << std::endl; }
-Bureaucrat::~Bureaucrat(void) { std::cout << "Bureaucrat Destructor called" << std::endl; }
 
-//THROWS
-const char *Bureaucrat::GradeTooHighException::what() const throw() { return "Grade is too high!"; }
-const char *Bureaucrat::GradeTooLowException::what() const throw() { return "Grade is too low!"; }
+Bureaucrat::Bureaucrat(void) : _name(""), _grade(0) 
+{ 
+    std::cout << "Bureaucrat Default constructor called" << std::endl; 
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &old) : _name(old._name), _grade(old._grade)
+{ 
+    std::cout << "Bureaucrat Copy constructor called" << std::endl; 
+}
+
+Bureaucrat::~Bureaucrat(void) 
+{ 
+    std::cout << "Bureaucrat Destructor called" << std::endl; 
+}
 
 //GETTER
 std::string Bureaucrat::getName(void) const { return(_name); }
@@ -48,6 +66,46 @@ void Bureaucrat::decrementGrade(void)
     if(_grade + 1 > 150)
         throw Bureaucrat::GradeTooLowException();
     _grade += 1;
+}
+
+// SIGN FORM
+void Bureaucrat::signForm(Form &obj)
+{
+    if(!obj.getSigned())
+    {
+        try
+        {
+            obj.beSigned(*this);
+            std::cout << this->getName() << " signed " << obj.getName() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cout << this->getName() << " couldn't sign " << obj.getName()
+                      << " the grade is too low "  << std::endl;
+        }
+    }
+    else
+        std::cout << this->getName() << " signed " << obj.getName() << std::endl;
+}
+
+void Bureaucrat::executeForm(Form &obj)
+{
+    if(obj.getSigned())
+    {
+        try
+        {
+            obj.beExecuted(*this);
+            std::cout << this->getName() << " executed " << obj.getName() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cout << this->getName() << " couldn't execute " << obj.getName()
+                      << " the grade is too low"  << std::endl;
+        }
+    }
+    else
+        std::cout << this->getName() << " couldn't execute " << obj.getName()
+                      << " because is not signed"  << std::endl;
 }
 
 //OPERATORS OVERLOAD
