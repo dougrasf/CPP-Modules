@@ -24,7 +24,6 @@ class RobotomyRequestForm : public AForm
 {
     private:
         std::string _target;
-        int        _random;
     public:
         RobotomyRequestForm(void);
         RobotomyRequestForm(std::string target);
