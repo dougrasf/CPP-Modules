@@ -6,7 +6,7 @@
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:03:58 by dofranci          #+#    #+#             */
-/*   Updated: 2023/11/15 16:07:45 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/11/16 21:11:06 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,8 @@ void ScalarConverter::printFloat(void)
         std::cout << "nanf" << std::endl;
     else if (_type >= 0)
         std::cout << "Imposible" << std::endl;
-    else{
+    else
+    {
         std::cout << std::fixed << std::setprecision(1);
         std::cout <<  _float << "f" << std::endl;
     }
@@ -132,7 +133,8 @@ void ScalarConverter::printDouble(void)
         std::cout << "+inf" <<std::endl;
     else if (_type > 3)
         std::cout << "nan" <<std::endl;
-    else {
+    else 
+    {
         std::cout << std::fixed << std::setprecision(1);
         std::cout << _double << std::endl;
     }
@@ -245,6 +247,5 @@ void ScalarConverter::convert(const std::string &literal)
         std::cout << "Invalid argument type" << std::endl;
         return;
     }
-
     printValues();
 }
