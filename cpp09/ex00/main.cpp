@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 19:12:53 by dofranci          #+#    #+#             */
-/*   Updated: 2023/12/08 20:22:06 by dofranci         ###   ########.fr       */
+/*   Created: 2023/12/12 19:53:37 by dofranci          #+#    #+#             */
+/*   Updated: 2023/12/12 21:44:29 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "BitCoinExchange.hpp"
 
-#include <iostream>
-#include <stack>
-
-template <typename T>
-class MutantStack : public std::stack<T> 
+int main(int argc, char *argv[])
 {
-	public:
-		typedef typename std::stack<T>::container_type::iterator iterator;
+    BitCoinExchange _btc;
 
-		MutantStack(void) : std::stack<T>() {}
-		~MutantStack(void) {}
-
-		iterator begin(void) { return (this->c.begin()); }
-		iterator end(void) { return (this->c.end()); }
-};
+    if(!_btc.verifyArgs(argc, argv))
+        return(1);
+    return(_btc.btc());
+}

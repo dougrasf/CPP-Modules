@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 19:12:53 by dofranci          #+#    #+#             */
-/*   Updated: 2023/12/08 20:22:06 by dofranci         ###   ########.fr       */
+/*   Created: 2023/12/11 18:19:36 by dofranci          #+#    #+#             */
+/*   Updated: 2023/12/12 19:52:28 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "RPN.hpp"
 
-#include <iostream>
-#include <stack>
-
-template <typename T>
-class MutantStack : public std::stack<T> 
+int main(int argc, char *argv[])
 {
-	public:
-		typedef typename std::stack<T>::container_type::iterator iterator;
+    RPN _rpn;
+    
+    if(!_rpn.validArgs(argc, argv))
+        return (1);
+    if(!_rpn.calc(argv[1]))
+        return (2);
+    std::cout << _rpn.getResult() << std::endl;
 
-		MutantStack(void) : std::stack<T>() {}
-		~MutantStack(void) {}
-
-		iterator begin(void) { return (this->c.begin()); }
-		iterator end(void) { return (this->c.end()); }
-};
+    return (0);
+}

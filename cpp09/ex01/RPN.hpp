@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitCoinExchange.hpp                                :+:      :+:    :+:   */
+/*   RPN.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dofranci <dofranci@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:00:10 by dofranci          #+#    #+#             */
-/*   Updated: 2023/12/12 21:43:04 by dofranci         ###   ########.fr       */
+/*   Updated: 2023/12/11 17:57:37 by dofranci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include <fstream>
-#include <map>
+#include <stack>
 #include <cstdlib>
-#include <sstream>
 
-class BitCoinExchange
+class RPN
 {
     public:
-        BitCoinExchange(void);
-        BitCoinExchange(const BitCoinExchange &old);
-        BitCoinExchange &operator=(const BitCoinExchange &old);
-        ~BitCoinExchange(void);
+        RPN(void);
+        RPN(const RPN &old);
+        RPN &operator=(const RPN &old);
+        ~RPN(void);
 
-        bool    verifyArgs(int argc, char *argv[]);
-        int     btc(void); 
+        bool validArgs(int argc, char *argv[]);
+        bool calc(char *exp);
+        void executeOperation(char exp);
+        int getResult(void);
+
     private:
-        std::map<std::string, float>    _data;
-        std::ifstream                   _inputFile;
-
+         std::stack<int>    _stack;
+         int                _result;
 };
