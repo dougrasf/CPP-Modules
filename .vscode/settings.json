@@ -48,7 +48,8 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "climits": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
